@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond the Infinite - Case Study | Yessica Rodriguez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Galada', cursive;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+            box-shadow: none;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .back-btn:hover {
+            color: #23272f;
+        }
+
+        .next-project-btn, .previous-project-btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #2c3e50;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .next-project-btn:hover, .previous-project-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-color: #2c3e50;
+        }
+
+        .previous-project-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .project-name {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        .hero {
+            padding: 120px 0 80px;
+            background: white;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .project-tag {
+            background: #f0f0f0;
+            color: #2c3e50;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        .content {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .project-image {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .highlights {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .highlights h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .highlights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlights li {
+            padding: 0.5rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .highlights li:before {
+            content: "✓";
+            color: #2c3e50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .project-tags {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 3rem auto 0 auto;
+            max-width: 900px;
+            width: 100%;
+        }
+        .project-nav-btn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background: white;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 2rem 2.5rem;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        .project-nav-btn.next {
+            align-items: flex-end;
+        }
+        .project-nav-btn:hover {
+            box-shadow: 0 6px 24px rgba(44,62,80,0.08);
+            border-color: #bfc6d1;
+            transform: translateY(-4px);
+        }
+        .project-nav-label {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #23272f;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .project-nav-name {
+            font-size: 1.05rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="indexhome.html" class="logo">Yessica Rodriguez</a>
+            <a href="indexhome.html#projects" class="back-btn">← Back to Projects</a>
+        </nav>
+    </header>
+
+    <section class="hero" style="background: white; color: #2c3e50;">
+        <div class="container" style="text-align: center;">
+            <h1>Beyond the Infinite</h1>
+            <div class="subtitle" style="color: #666;">Company Landing Page</div>
+            <div class="project-tags">
+                <span class="project-tag" style="background: #f0f0f0; color: #2c3e50;">B2B Design</span>
+                <span class="project-tag" style="background: #f0f0f0; color: #2c3e50;">Client Project</span>
+                <span class="project-tag" style="background: #f0f0f0; color: #2c3e50;">Landing Page</span>
+            </div>
+            <div style="margin-top: 2rem;">
+                <img src="imagen/beyond.png" alt="Beyond the Infinite" style="width: 90%; max-width: 800px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="section">
+                <h2>Project Overview</h2>
+                <p>Beyond the Infinite is a U.S.-based company that specializes in connecting exceptional Latin American talent with U.S. businesses. The challenge was to create a professional, trustworthy landing page that would effectively communicate their value proposition to potential clients and candidates.</p>
+                <p>As both a UX/UI Designer and Technical Recruiter at the company, I had unique insights into both the business needs and user pain points, which informed my design decisions throughout the project.</p>
+            </div>
+
+            <div class="section">
+                <h2>Design Challenge</h2>
+                <p>The main challenge was to create a landing page that would appeal to two distinct user groups: U.S. businesses looking for talent and Latin American professionals seeking opportunities. The design needed to convey professionalism, trust, and the company's unique value proposition of bridging geographical and cultural gaps.</p>
+            </div>
+
+            <div class="highlights">
+                <h3>Key Design Solutions</h3>
+                <ul>
+                    <li>Clean, professional layout that builds trust with corporate clients</li>
+                    <li>Clear value proposition highlighting the benefits of Latin American talent</li>
+                    <li>Dual-focused messaging for both businesses and candidates</li>
+                    <li>Strategic use of testimonials and success stories</li>
+                    <li>Mobile-responsive design for accessibility across devices</li>
+                    <li>Clear call-to-action buttons for different user journeys</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Design Process</h2>
+                <p>Working closely with the business stakeholders, I conducted user research to understand the pain points of both target audiences. I created wireframes and prototypes, iterating based on feedback from both internal teams and potential users.</p>
+                <p>The final design successfully increased user engagement and conversion rates, helping the company establish a stronger online presence in the competitive talent acquisition market.</p>
+            </div>
+
+            <div class="project-image" style="background: white; padding: 2rem; display: flex; flex-direction: row; gap: 2rem; justify-content: center; align-items: center;">
+                <img src="imagen/beyondmore.png" alt="Beyond the Infinite More" style="width: 60%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                <img src="imagen/beyontabout.png" alt="Beyond the Infinite About" style="width: 60%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+            </div>
+
+            <div class="section">
+                <h2>Results & Impact</h2>
+                <p>The new landing page design contributed to improved user engagement metrics and helped establish Beyond the Infinite as a professional, trustworthy partner for businesses seeking Latin American talent. The clear, conversion-focused design supported the company's growth objectives during my tenure.</p>
+            </div>
+        </div>
+    </section>
+    <div class="project-nav">
+        <a href="turismocity.html" class="project-nav-btn previous">
+            <span class="project-nav-label">← Previous Project</span>
+            <span class="project-nav-name">Turismocity</span>
+        </a>
+        <a href="quickclean.html" class="project-nav-btn next">
+            <span class="project-nav-label">Next Project →</span>
+            <span class="project-nav-name">QuickClean</span>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismocity Redesign - Case Study | Yessica Rodriguez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Galada', cursive;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+            box-shadow: none;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .back-btn:hover {
+            color: #23272f;
+            background: none;
+            border: none;
+        }
+
+        .next-project-btn, .previous-project-btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #2c3e50;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .next-project-btn:hover, .previous-project-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-color: #2c3e50;
+        }
+
+        .previous-project-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .project-name {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        .hero {
+            padding: 120px 0 80px;
+            background: white;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .project-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        .content {
+            background: #ffffff;
+            padding: 80px 0;
+        }
+
+        .project-image {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .highlights {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .highlights h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .highlights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlights li {
+            padding: 0.5rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .highlights li:before {
+            content: "✓";
+            color: #2c3e50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .redesign-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .comparison-card {
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .before-card {
+            background: #ffebee;
+            border: 2px solid #f44336;
+        }
+
+        .after-card {
+            background: #e8f5e8;
+            border: 2px solid #4caf50;
+        }
+
+        .comparison-card h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .before-card h4 {
+            color: #f44336;
+        }
+
+        .after-card h4 {
+            color: #4caf50;
+        }
+
+        .travel-section {
+            background: #ffffff;
+            color: #000000;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .travel-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .travel-section p {
+            color: #000000;
+        }
+
+        .luxury-section {
+            background: #ffffff;
+            color: #000000;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .luxury-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .luxury-section p {
+            color: #000000;
+        }
+
+        .hero-image {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .project-tags {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .redesign-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 3rem auto 0 auto;
+            max-width: 900px;
+            width: 100%;
+        }
+        .project-nav-btn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background: white;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 2rem 2.5rem;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        .project-nav-btn.next {
+            align-items: flex-end;
+        }
+        .project-nav-btn:hover {
+            box-shadow: 0 6px 24px rgba(44,62,80,0.08);
+            border-color: #bfc6d1;
+            transform: translateY(-4px);
+        }
+        .project-nav-label {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #23272f;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .project-nav-name {
+            font-size: 1.05rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="indexhome.html" class="logo">Yessica Rodriguez</a>
+            <a href="indexhome.html#projects" class="back-btn">← Back to Projects</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Turismocity Redesign</h1>
+            <div class="subtitle">Travel Platform Website Redesign</div>
+            <div class="project-tags">
+                <span class="project-tag">Travel Platform</span>
+                <span class="project-tag">UX Research</span>
+                <span class="project-tag">Website Redesign</span>
+            </div>
+            <div class="hero-image">
+                <img src="imagen/Turismoportada1.png" alt="Turismocity Website Redesign">
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="section">
+                <h2>Project Overview</h2>
+                <p>Turismocity is a comprehensive travel booking platform that needed a complete user experience overhaul to improve conversion rates and user satisfaction. The existing platform suffered from navigation issues, unclear information architecture, and a booking flow that caused high abandonment rates.</p>
+                <p>This redesign project involved extensive UX research, competitive analysis, user journey mapping, and the creation of a more intuitive, conversion-focused travel booking experience.</p>
+            </div>
+
+            <div class="travel-section">
+                <h3>Transforming Travel Planning</h3>
+                <p>The redesign focused on simplifying the complex process of travel planning, making it easier for users to discover, compare, and book their ideal travel experiences.</p>
+            </div>
+
+            <div class="section">
+                <h2>Research & Problem Identification</h2>
+                <p>Through user interviews, analytics analysis, and usability testing of the existing platform, I identified several critical pain points: confusing navigation structure, overwhelming search results, lack of clear pricing information, and a complicated booking process.</p>
+                <p>Users frequently abandoned their bookings due to uncertainty about pricing, difficulty comparing options, and a lack of trust in the booking process.</p>
+            </div>
+
+            <div class="redesign-comparison">
+                <div class="comparison-card before-card">
+                    <h4>Before Redesign</h4>
+                    <ul style="text-align: left; list-style: none; padding: 0;">
+                        <li>• Confusing navigation</li>
+                        <li>• Overwhelming search results</li>
+                        <li>• Hidden pricing information</li>
+                        <li>• Complex booking flow</li>
+                        <li>• High abandonment rates</li>
+                    </ul>
+                </div>
+                <div class="comparison-card after-card">
+                    <h4>After Redesign</h4>
+                    <ul style="text-align: left; list-style: none; padding: 0;">
+                        <li>• Intuitive navigation system</li>
+                        <li>• Clear, filterable results</li>
+                        <li>• Transparent pricing display</li>
+                        <li>• Streamlined booking process</li>
+                        <li>• Improved conversion rates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlights">
+                <h3>Key Redesign Solutions</h3>
+                <ul>
+                    <li>Simplified navigation with clear category organization</li>
+                    <li>Enhanced search functionality with smart filters</li>
+                    <li>Transparent pricing display with no hidden fees</li>
+                    <li>Streamlined booking flow with progress indicators</li>
+                    <li>Improved mobile responsiveness for on-the-go booking</li>
+                    <li>Trust signals and security badges throughout the experience</li>
+                    <li>Personalized recommendations based on user preferences</li>
+                    <li>Clear cancellation and refund policy information</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Design Process</h2>
+                <p>The redesign process began with comprehensive user research, including surveys, interviews, and usability testing sessions. I created detailed user personas and journey maps to understand the complete travel booking experience from inspiration to post-trip follow-up.</p>
+                <p>The information architecture was completely restructured based on user mental models and task flows. Wireframes and prototypes were tested iteratively to ensure the new design addressed identified pain points.</p>
+            </div>
+
+            <div class="section">
+                <h2>User Experience Improvements</h2>
+                <p>The new design prioritizes user confidence and clarity throughout the booking process. Key improvements include a simplified search interface, clear comparison tools, transparent pricing, and a step-by-step booking flow that reduces cognitive load.</p>
+                <p>Special attention was paid to mobile optimization, as research showed a significant portion of users were booking travel on mobile devices. The responsive design ensures a seamless experience across all device types.</p>
+            </div>
+
+            <div class="section">
+                <h2>Results & Impact</h2>
+                <p>The Turismocity redesign successfully addressed the major usability issues identified in the research phase. The new design provides a clearer, more trustworthy booking experience that reduces user friction and supports business conversion goals.</p>
+                <p>This project demonstrates my ability to conduct comprehensive UX research, identify systemic usability issues, and design solutions that balance user needs with business objectives in the competitive travel industry.</p>
+            </div>
+        </div>
+    </section>
+    <div class="project-nav">
+        <a href="culturalconnect.html" class="project-nav-btn previous">
+            <span class="project-nav-label">← Previous Project</span>
+            <span class="project-nav-name">CulturalConnect</span>
+        </a>
+        <a href="beyond-the-infinite.html" class="project-nav-btn next">
+            <span class="project-nav-label">Next Project →</span>
+            <span class="project-nav-name">Beyond the Infinite</span>
+        </a>
+    </div>
+</body>
+</html>

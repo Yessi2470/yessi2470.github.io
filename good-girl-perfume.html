@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Girl Perfume - Case Study | Yessica Rodriguez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Galada', cursive;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+            box-shadow: none;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .back-btn:hover {
+            color: #23272f;
+            background: none;
+            border: none;
+        }
+
+        .next-project-btn, .previous-project-btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #2c3e50;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .next-project-btn:hover, .previous-project-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-color: #2c3e50;
+        }
+
+        .previous-project-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .project-name {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        .hero {
+            padding: 120px 0 80px;
+            background: white;
+            color: #2c3e50;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .project-tag {
+            background: #f0f0f0;
+            color: #2c3e50;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        .content {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .project-image {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-image.side-by-side {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .project-image.side-by-side img {
+            flex: 1;
+            width: 50%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .highlights {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .highlights h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .highlights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlights li {
+            padding: 0.5rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .highlights li:before {
+            content: "✓";
+            color: #2c3e50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .luxury-section {
+            background: white;
+            color: #2c3e50;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .luxury-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .project-image.side-by-side {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .project-image.side-by-side img {
+                width: 100%;
+            }
+        }
+
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 3rem auto 0 auto;
+            max-width: 900px;
+            width: 100%;
+        }
+        .project-nav-btn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background: white;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 2rem 2.5rem;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        .project-nav-btn.next {
+            align-items: flex-end;
+        }
+        .project-nav-btn:hover {
+            box-shadow: 0 6px 24px rgba(44,62,80,0.08);
+            border-color: #bfc6d1;
+            transform: translateY(-4px);
+        }
+        .project-nav-label {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #23272f;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .project-nav-name {
+            font-size: 1.05rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="indexhome.html" class="logo">Yessica Rodriguez</a>
+            <a href="indexhome.html#projects" class="back-btn">← Back to Projects</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container" style="text-align: center;">
+            <h1>Good Girl Perfume</h1>
+            <div class="subtitle">Luxury Landing Page Design</div>
+            <div class="project-tags">
+                <span class="project-tag">Luxury Design</span>
+                <span class="project-tag">UX Writing</span>
+                <span class="project-tag">Landing Page</span>
+            </div>
+            <div style="margin-top: 2rem;">
+                <img src="imagen/Goodgirlportada.png" alt="Good Girl Perfume Landing Page" style="width: 90%; max-width: 800px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="section">
+                <h2>Project Overview</h2>
+                <p>The Good Girl Perfume landing page was designed for Carolina Herrera's iconic fragrance line. This project focused on creating a visually compelling, luxury-focused landing page that captures the essence of the Good Girl brand while driving conversions.</p>
+                <p>The challenge was to translate the sophisticated, rebellious spirit of the Good Girl fragrance into a digital experience that would resonate with the target audience and encourage product exploration and purchase.</p>
+            </div>
+
+            <div class="luxury-section">
+                <h3>Luxury Brand Experience</h3>
+                <p>The design captures the duality of the Good Girl fragrance - sophisticated yet rebellious, elegant yet bold. Every element was carefully crafted to reflect the premium nature of the Carolina Herrera brand.</p>
+            </div>
+
+            <div class="section">
+                <h2>Design Approach</h2>
+                <p>The design strategy centered around creating an immersive luxury experience that would appeal to the sophisticated target demographic. I focused on elegant typography, premium color palettes, and strategic use of white space to convey exclusivity and refinement.</p>
+                <p>The UX writing played a crucial role in this project, with carefully crafted copy that speaks to the fragrance's unique personality and the emotions it evokes.</p>
+            </div>
+
+            <div class="highlights">
+                <h3>Key Design Elements</h3>
+                <ul>
+                    <li>Sophisticated color palette reflecting the fragrance's premium positioning</li>
+                    <li>Elegant typography hierarchy that guides user attention</li>
+                    <li>Strategic use of imagery to showcase product variations</li>
+                    <li>Compelling UX writing that captures the brand's rebellious elegance</li>
+                    <li>Clean, minimalist layout that emphasizes product beauty</li>
+                    <li>Conversion-focused design with clear call-to-action placement</li>
+                    <li>Mobile-responsive design maintaining luxury aesthetic</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>UX Writing Strategy</h2>
+                <p>The copy strategy focused on emotional storytelling, connecting with users who identify with the Good Girl persona. The writing balances sophistication with approachability, using language that feels both premium and relatable.</p>
+                <p>Each piece of copy was crafted to reinforce the brand's positioning while guiding users through the conversion funnel, from initial interest to product exploration and purchase consideration.</p>
+            </div>
+
+            <div class="section">
+                <h2>Visual Design Philosophy</h2>
+                <p>The visual design embraces the duality of the Good Girl brand through contrasting elements - light and dark, bold and subtle, classic and contemporary. The layout showcases different fragrance variations while maintaining a cohesive luxury aesthetic throughout.</p>
+                <p>Special attention was paid to the product presentation, ensuring that each fragrance variation is displayed in a way that highlights its unique characteristics while maintaining brand consistency.</p>
+                
+                <div class="project-image side-by-side">
+                    <img src="imagen/Goodgirl1.png" alt="Good Girl Perfume Design Detail 1">
+                    <img src="imagen/Goodgirl2.png" alt="Good Girl Perfume Design Detail 2">
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Results & Impact</h2>
+                <p>The Good Girl Perfume landing page successfully captures the essence of the luxury fragrance brand through sophisticated design and compelling UX writing. The project demonstrates my ability to work with premium brands and create digital experiences that align with high-end positioning and aesthetic standards.</p>
+                <p>This project showcased my skills in luxury brand design, strategic UX writing, and creating conversion-focused layouts that maintain brand integrity while driving business objectives.</p>
+            </div>
+        </div>
+    </section>
+    <div class="project-nav">
+        <a href="quickclean.html" class="project-nav-btn previous">
+            <span class="project-nav-label">← Previous Project</span>
+            <span class="project-nav-name">QuickClean</span>
+        </a>
+        <a href="culturalconnect.html" class="project-nav-btn next">
+            <span class="project-nav-label">Next Project →</span>
+            <span class="project-nav-name">CulturalConnect</span>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yessica Rodriguez - UX/UI Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Galada', cursive;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2c3e50;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            color: #2c3e50;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 2rem 0;
+        }
+
+        .skill-tag {
+            background: #f0f0f0;
+            color: #2c3e50;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #e0e0e0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .primary-button {
+            background: #000000;
+            color: white;
+            border: 2px solid #000000;
+        }
+
+        .primary-button:hover {
+            background: #333333;
+            border-color: #333333;
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: #000000;
+            border: 2px solid #000000;
+        }
+
+        .secondary-button:hover {
+            background: #000000;
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #444;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: #f8f9fa;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .experience-item, .education-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .experience-item h3 {
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+
+        .company {
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-type {
+            background: #f0f0f0;
+            color: #666;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, background-color 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            background-color: #f0f0f0;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .project-subtitle {
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background: #f0f0f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: none;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.3s, border 0.3s, background 0.3s;
+        }
+
+        .contact-item:hover {
+            border: 2px solid #e0e0e0;
+            background: #f7f7f7;
+            box-shadow: 0 4px 16px rgba(189,189,189,0.10);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            color: #888;
+        }
+
+        .contact-item a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #2c3e50;
+        }
+
+        /* Languages & Certifications estilo moderno */
+        .languages-list {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .language-tag {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            color: #4b5563;
+            border: 2px solid #e5e7eb;
+            border-radius: 2rem;
+            padding: 0.5rem 1.2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            gap: 0.5rem;
+        }
+        .certifications-list {
+            list-style: none;
+            padding-left: 0;
+            color: #6b7280;
+            font-size: 1.05rem;
+        }
+        .certifications-list .icon {
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .language-tag .icon {
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+        }
+
+        /* Modern hero styles */
+        .modern-hero {
+            background: #f8fafc;
+            padding: 120px 0 80px;
+            text-align: left;
+        }
+        .modern-hero-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .modern-hero-text {
+            flex: 1;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .modern-hero-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 0.8rem;
+            letter-spacing: -1px;
+        }
+        .modern-hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #64748b;
+            margin-bottom: 0.8rem;
+        }
+        .modern-hero-desc {
+            font-size: 1.05rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+        .modern-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        .modern-skill {
+            background: #f1f5f9;
+            color: #334155;
+            border-radius: 2rem;
+            padding: 0.4rem 1.1rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+        }
+        .modern-cta-buttons {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: flex-start;
+            margin-top: 1.2rem;
+        }
+        .modern-cta {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.7rem 1.3rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 2px solid #111827;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .modern-cta.primary {
+            background: #111827;
+            color: #fff;
+        }
+        .modern-cta.primary:hover {
+            background: #334155;
+            border-color: #334155;
+        }
+        .modern-cta.secondary {
+            background: #fff;
+            color: #111827;
+            border: 2px solid #cbd5e1;
+        }
+        .modern-cta.secondary:hover {
+            background: #f1f5f9;
+            color: #111827;
+            border-color: #94a3b8;
+        }
+        .modern-hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modern-hero-image img {
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #e2e8f0;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        @media (max-width: 900px) {
+            .modern-hero-content {
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+            .modern-hero-title { font-size: 1.5rem; }
+            .modern-hero-subtitle { font-size: 1rem; }
+            .modern-hero-image img { width: 220px; height: 220px; }
+            .modern-hero-text, .modern-skills, .modern-cta-buttons {
+                align-items: center !important;
+                text-align: center !important;
+                justify-content: center !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Yessica Rodriguez</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero modern-hero">
+        <div class="hero-content modern-hero-content">
+            <div class="hero-text modern-hero-text">
+                <h1 class="modern-hero-title">Hi, I'm Yessica</h1>
+                <div class="modern-hero-subtitle">UX/UI Designer</div>
+                <p class="modern-hero-desc">I design intuitive, human-centered experiences that seamlessly connect people and technology.</p>
+                <div class="modern-skills">
+                    <span class="modern-skill">Figma</span>
+                    <span class="modern-skill">UX Writing</span>
+                    <span class="modern-skill">UX Research</span>
+                    <span class="modern-skill">HTML &amp; CSS</span>
+                    <span class="modern-skill">JavaScript</span>
+                </div>
+                <div class="modern-cta-buttons">
+                    <a href="#contact" class="modern-cta primary"><span class="icon">✉️</span> Get in Touch</a>
+                    <a href="#projects" class="modern-cta secondary"><span class="icon">↗️</span> View My Work</a>
+                </div>
+            </div>
+            <div class="modern-hero-image">
+                <img src="imagen/fotohome.jpeg" alt="Yessica Rodriguez">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I'm a UX/UI Designer who loves turning ideas into intuitive, user-first experiences. From wireframes to words, I design with purpose — blending visual design, UX writing, and user research.</p>
+                <p>I trained at Coderhouse, and now I'm diving into Web Development to bring designs to life with code.</p>
+                <p>Always curious, detail-obsessed, and learning something new every day.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Education</h2>
+            <div class="experience-grid">
+                <div>
+                    <h3 style="margin-bottom: 2rem; color: #2c3e50;">Work Experience</h3>
+                    
+                    <div class="experience-item">
+                        <h3>UX/UI Designer & Technical Recruiter</h3>
+                        <div class="company">Beyond the Infinite</div>
+                        <div class="timeline">Jul 2023 - Nov 2024</div>
+                        <div class="job-type">Remote • Full-time</div>
+                        <p>As a UX/UI Designer, I conducted user research and created wireframes and prototypes. As a Technical Recruiter, I identified qualified candidates and managed the full recruitment lifecycle.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Administrative Assistant</h3>
+                        <div class="company">Naldo</div>
+                        <div class="timeline">Dec 2022 - Jul 2023</div>
+                        <div class="job-type">On-site • Full-time</div>
+                        <p>Administrative and customer service tasks in a retail environment.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Administrative Assistant</h3>
+                        <div class="company">Musimundo</div>
+                        <div class="timeline">Mar 2021 - Dec 2022</div>
+                        <div class="job-type">On-site • Full-time</div>
+                        <p>Daily operations, data management, and support in a fast-paced commercial setting.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Business Manager</h3>
+                        <div class="company">DOSSE SA</div>
+                        <div class="timeline">Jan 2013 - Nov 2020</div>
+                        <div class="job-type">On-site • Full-time</div>
+                        <p>Managed staff, accounting, legal tasks, purchasing, logistics, and supplier negotiations.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom: 2rem; color: #2c3e50;">Education</h3>
+                    
+                    <div class="education-item">
+                        <h3>UX/UI Design</h3>
+                        <div class="company">Coderhouse</div>
+                        <div class="timeline">2023-2024</div>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>Web Design and & Programming</h3>
+                        <div class="company">DaVinci School</div>
+                        <div class="timeline">2024-2026</div>
+                    </div>
+
+                    <h3 style="margin: 2rem 0; color: #2c3e50;">Languages</h3>
+                    <div class="languages-list">
+                        <span class="language-tag"><span class="icon">🌐</span> Spanish: Native</span>
+                        <span class="language-tag"><span class="icon">🌐</span> English: B2</span>
+                    </div>
+
+                    <h3 style="margin: 2rem 0; color: #2c3e50;">Certifications</h3>
+                    <ul class="certifications-list">
+                        <li><span class="icon">🎓</span> Graphic Design Foundations Course (2024) – Coderhouse</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: #666;">A selection of my UX/UI design work</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <a href="beyond-the-infinite.html" style="text-decoration: none; color: inherit;">
+                        <div class="project-image" style="background: white; display: flex; align-items: center; justify-content: center;">
+                            <img src="imagen/Beyond.png" alt="BTI" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Beyond the Infinite</h3>
+                            <div class="project-subtitle">Company Landing Page</div>
+                            <div class="project-tags">
+                                <span class="project-tag">B2B Design</span>
+                                <span class="project-tag">Client Project</span>
+                            </div>
+                            <p class="project-description">A professional landing page for a U.S.-based company specializing in connecting exceptional Latin American talent with U.S. businesses.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="quickclean.html" style="text-decoration: none; color: inherit;">
+                        <div class="project-image">
+                            <img src="imagen/Quickclanportada.png" alt="QuickClean Mobile App" style="width: 90%; height: 90%; object-fit: cover; object-position: center 20%; transform: scale(1.2);">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">QuickClean</h3>
+                            <div class="project-subtitle">Mobile Application</div>
+                            <div class="project-tags">
+                                <span class="project-tag">UX/UI Design</span>
+                                <span class="project-tag">User Research</span>
+                            </div>
+                            <p class="project-description">A mobile application connecting users with verified domestic cleaning professionals in Argentina.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="good-girl-perfume.html" style="text-decoration: none; color: inherit;">
+                        <div class="project-image" style="background: white; display: flex; align-items: center; justify-content: center;">
+                            <img src="imagen/Goodgirlportada.png" alt="Good Girl Perfume" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Good Girl Perfume</h3>
+                            <div class="project-subtitle">Landing Page</div>
+                            <div class="project-tags">
+                                <span class="project-tag">Luxury Design</span>
+                                <span class="project-tag">UX Writing</span>
+                            </div>
+                            <p class="project-description">A visually compelling landing page for Carolina Herrera's Good Girl fragrance.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="culturalconnect.html" style="text-decoration: none; color: inherit;">
+                        <div class="project-image" style="background: white; display: flex; align-items: center; justify-content: center;">
+                            <img src="imagen/culturalconnectportada.png" alt="CulturalConnect App" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">CulturalConnect</h3>
+                            <div class="project-subtitle">Mobile Application</div>
+                            <div class="project-tags">
+                                <span class="project-tag">Educational</span>
+                                <span class="project-tag">Language Learning</span>
+                            </div>
+                            <p class="project-description">A mobile app bridging language learning with cultural immersion through real-life conversations.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="turismocity.html" style="text-decoration: none; color: inherit;">
+                        <div class="project-image" style="background: white; display: flex; align-items: center; justify-content: center;">
+                            <img src="imagen/Turismoportada1.png" alt="Turismocity Redesign" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Turismocity Redesign</h3>
+                            <div class="project-subtitle">Website Redesign</div>
+                            <div class="project-tags">
+                                <span class="project-tag">Travel Platform</span>
+                                <span class="project-tag">UX Research</span>
+                            </div>
+                            <p class="project-description">A comprehensive redesign of the Turismocity travel booking platform to improve user experience.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <a href="mailto:yessirodriguez2470@gmail.com">yessirodriguez2470@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/yessirodriguez" target="_blank">linkedin.com/in/yessirodriguez</a>
+                </div>
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <a href="tel:+543517370763">+54 3517370763</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer style="text-align: center; padding: 2rem; background: #000000; color: #999;">
+    © 2025 Yessica Rodriguez. All rights reserved.
+</footer>
+
+</body>
+</html>
