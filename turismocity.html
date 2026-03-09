@@ -346,6 +346,30 @@
             margin-top: 0.5rem;
             font-weight: 400;
         }
+
+        .project-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1.5rem 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+        .project-summary-item {
+            color: #666;
+            font-size: 1rem;
+        }
+        .project-summary-item strong {
+            color: #2c3e50;
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+        }
     </style>
 </head>
 <body>
@@ -359,11 +383,17 @@
     <section class="hero">
         <div class="container">
             <h1>Turismocity Redesign</h1>
-            <div class="subtitle">Travel Platform Website Redesign</div>
+            <div class="subtitle">Website Redesign</div>
             <div class="project-tags">
                 <span class="project-tag">Travel Platform</span>
                 <span class="project-tag">UX Research</span>
                 <span class="project-tag">Website Redesign</span>
+            </div>
+            <div class="project-summary">
+                <div class="project-summary-item"><strong>Role</strong>UX/UI Designer</div>
+                <div class="project-summary-item"><strong>Duration</strong>3 weeks</div>
+                <div class="project-summary-item"><strong>Tools</strong>Figma, FigJam</div>
+                <div class="project-summary-item"><strong>Project Type</strong>UX Case Study Academic Project (Coderhouse)</div>
             </div>
             <div class="hero-image">
                 <img src="imagen/Turismoportada1.png" alt="Turismocity Website Redesign">
@@ -375,67 +405,73 @@
         <div class="container">
             <div class="section">
                 <h2>Project Overview</h2>
-                <p>Turismocity is a travel booking website that needed a user experience overhaul. The original platform had usability issues such as unclear navigation, overwhelming search results, and a complicated booking process that led to high abandonment rates.</p>
-                <p>This redesign project focused on improving the desktop web experience, aiming for a cleaner and more trustworthy interface.</p>
+                <p>Turismocity is a travel booking platform that allows users to compare flights, hotels, and travel deals.</p>
+                <p>The goal of this project was to redesign the desktop experience to improve usability, simplify navigation, and reduce friction in the booking process. The original platform presented several issues such as confusing navigation, overwhelming search results, and lack of pricing transparency.</p>
             </div>
 
             <div class="section">
-                <h2>Research & Problem Identification</h2>
-                <p>I conducted a UX audit that included usability testing, user feedback analysis, and a review of competitor platforms. This revealed several key issues:</p>
+                <h2>User Research & Problem Discovery</h2>
+                <p>To understand the main usability issues, I conducted a UX audit that included usability testing, analysis of user feedback, and a review of competitor travel platforms.</p>
+                <p>This research revealed several key problems that negatively impacted the user experience.</p>
+                <h3 style="margin: 1.5rem 0 0.75rem; font-size: 1.2rem; color: #2c3e50;">Key Usability Issues</h3>
                 <ul style="color: #666; list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 0.5em;"><span style="color: #4caf50; font-weight: bold; margin-right: 0.5em;">✓</span>Confusing navigation structure</li>
-                    <li style="margin-bottom: 0.5em;"><span style="color: #4caf50; font-weight: bold; margin-right: 0.5em;">✓</span>Overwhelming and hard-to-filter search results</li>
-                    <li style="margin-bottom: 0.5em;"><span style="color: #4caf50; font-weight: bold; margin-right: 0.5em;">✓</span>Lack of transparent pricing</li>
-                    <li style="margin-bottom: 0.5em;"><span style="color: #4caf50; font-weight: bold; margin-right: 0.5em;">✓</span>Friction in the booking process</li>
+                    <li style="margin-bottom: 0.5em;"><span style="color: #2c3e50; font-weight: bold; margin-right: 0.5em;">•</span>Confusing navigation structure</li>
+                    <li style="margin-bottom: 0.5em;"><span style="color: #2c3e50; font-weight: bold; margin-right: 0.5em;">•</span>Overwhelming search results with poor filtering options</li>
+                    <li style="margin-bottom: 0.5em;"><span style="color: #2c3e50; font-weight: bold; margin-right: 0.5em;">•</span>Lack of transparent pricing information</li>
+                    <li style="margin-bottom: 0.5em;"><span style="color: #2c3e50; font-weight: bold; margin-right: 0.5em;">•</span>Complex and fragmented booking process</li>
                 </ul>
-                <p>These usability gaps contributed to frustration and a high number of incomplete bookings, especially during checkout.</p>
             </div>
 
             <div class="redesign-comparison">
                 <div class="comparison-card before-card">
-                    <h4>Before Redesign</h4>
+                    <h4>Before</h4>
                     <ul style="text-align: left; list-style: none; padding: 0;">
                         <li>Poor navigation structure</li>
-                        <li>Cluttered search results</li>
+                        <li>Cluttered and overwhelming search results</li>
                         <li>Hidden or inconsistent pricing</li>
                         <li>Complicated booking flow</li>
-                        <li>Low trust and high drop-off rates</li>
+                        <li>Low user trust and high drop-off rates</li>
                     </ul>
                 </div>
                 <div class="comparison-card after-card">
-                    <h4>After Redesign</h4>
+                    <h4>After</h4>
                     <ul style="text-align: left; list-style: none; padding: 0;">
                         <li>Clear and organized navigation</li>
-                        <li>Search results with smart filters</li>
-                        <li>Transparent pricing with no hidden fees</li>
-                        <li>Streamlined booking journey</li>
-                        <li>More focused and confident user experience</li>
+                        <li>Improved search results with smart filters</li>
+                        <li>Transparent pricing across the booking process</li>
+                        <li>Streamlined and intuitive booking journey</li>
+                        <li>More trustworthy and focused user experience</li>
                     </ul>
                 </div>
             </div>
 
             <div class="highlights">
-                <h3>Key Redesign Solutions</h3>
+                <h3>Key Design Solutions</h3>
                 <ul>
-                    <li>Simplified navigation with well-defined categories</li>
-                    <li>Enhanced search functionality with relevant filters</li>
-                    <li>Clear pricing display throughout the flow</li>
-                    <li>A linear, intuitive booking process</li>
-                    <li>Visual trust signals like badges and reviews</li>
-                    <li>Personalized suggestions based on user preferences</li>
-                    <li>Clear policies for cancellation and refunds</li>
+                    <li>Simplified navigation with clear categories</li>
+                    <li>Improved search functionality with advanced filters</li>
+                    <li>Transparent pricing throughout the booking flow</li>
+                    <li>A simplified, linear booking journey</li>
+                    <li>Trust-building elements such as reviews and ratings</li>
+                    <li>Personalized travel suggestions</li>
+                    <li>Clear cancellation and refund policies</li>
                 </ul>
             </div>
 
             <div class="section">
                 <h2>Design Approach</h2>
-                <p>I designed wireframes and high-fidelity mockups focused on improving usability and clarity. The information architecture was restructured to reflect user mental models, and design iterations were guided by usability insights.</p>
-                <p>Special attention was placed on building trust and reducing cognitive load during the booking process, helping users compare options and make decisions with ease.</p>
+                <p>I created wireframes and high-fidelity mockups focused on improving usability and clarity.</p>
+                <p>The information architecture was reorganized to better match user expectations and mental models. Design iterations were guided by usability insights to reduce cognitive load and make it easier for users to compare travel options and complete bookings.</p>
             </div>
 
             <div class="section">
                 <h2>Final Outcome</h2>
                 <p>The redesigned desktop experience improves navigation, transparency, and booking efficiency. It offers users a smoother planning journey, from discovery to confirmation, aligned with modern UX best practices.</p>
+            </div>
+
+            <div class="section">
+                <h2>Learnings</h2>
+                <p>This project highlighted the importance of simplifying complex booking processes and presenting information in a clear and transparent way. It also reinforced how better filtering, navigation, and trust signals can significantly improve the overall user experience.</p>
             </div>
         </div>
     </section>

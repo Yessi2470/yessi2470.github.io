@@ -190,16 +190,30 @@
 
         /* About Section */
         .about {
-            background: white;
+            background: #2d2d2d;
+            color: #fff;
+            padding: 50px 0;
         }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .about .section-title {
+            color: #fff;
             text-align: center;
+            margin-bottom: 1.25rem;
+        }
+        .about-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .about-content {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #666;
+            color: rgba(255,255,255,0.9);
+            text-align: justify;
+        }
+        .about-content p {
+            margin-bottom: 0.75rem;
+        }
+        .about-content p:last-child {
+            margin-bottom: 0;
         }
 
         /* Experience Section */
@@ -423,6 +437,46 @@
             font-size: 1.1rem;
         }
 
+        /* Skills section */
+        .skills-section {
+            margin-top: 3rem;
+        }
+        .skills-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .skill-card h3 {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .skills-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .skill-pill {
+            background: #f1f5f9;
+            color: #374151;
+            border-radius: 999px;
+            padding: 0.35rem 0.9rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .skills-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero-content {
@@ -487,12 +541,20 @@
             font-size: 1.2rem;
             font-weight: 700;
             color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .modern-hero-location {
+            font-size: 0.95rem;
+            color: #94a3b8;
             margin-bottom: 0.8rem;
         }
         .modern-hero-desc {
             font-size: 1.05rem;
             color: #64748b;
-            margin-bottom: 1.5rem;
+            margin: 0 0 0.25rem 0;
+        }
+        .modern-hero-desc:last-of-type {
+            margin-bottom: 1rem;
         }
         .modern-skills {
             display: flex;
@@ -594,15 +656,10 @@
         <div class="hero-content modern-hero-content">
             <div class="hero-text modern-hero-text">
                 <h1 class="modern-hero-title">Hi, I'm Yessica</h1>
-                <div class="modern-hero-subtitle">Junior UX/UI Designer</div>
-                <p class="modern-hero-desc">I design intuitive, human-centered experiences that seamlessly connect people and technology.</p>
-                <div class="modern-skills">
-                    <span class="modern-skill">Figma</span>
-                    <span class="modern-skill">UX Writing</span>
-                    <span class="modern-skill">UX Research</span>
-                    <span class="modern-skill">HTML &amp; CSS</span>
-                    <span class="modern-skill">JavaScript</span>
-                </div>
+                <div class="modern-hero-subtitle">UX/UI Designer</div>
+                <div class="modern-hero-location">Based in Argentina • Available for remote opportunities</div>
+                <p class="modern-hero-desc">I design clear and user-centered digital products through research, usability testing, and prototyping.</p>
+                <p class="modern-hero-desc">Focused on creating simple, intuitive experiences that solve real user problems.</p>
                 <div class="modern-cta-buttons">
                     <a href="#contact" class="modern-cta primary"><span class="icon">✉️</span> Get in Touch</a>
                     <a href="#projects" class="modern-cta secondary"><span class="icon">↗️</span> View My Work</a>
@@ -617,10 +674,14 @@
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>I'm a UX/UI Designer who loves turning ideas into intuitive, user-first experiences. From wireframes to words, I design with purpose — blending visual design, UX writing, and user research.</p>
-                <p>I trained at Coderhouse, and now I'm diving into Web Development to bring designs to life with code.</p>
-                <p>Always curious, detail-obsessed, and learning something new every day.</p>
+            <div class="about-wrapper">
+                <div class="about-content">
+                    <p>I'm a UX/UI designer focused on creating simple and intuitive digital experiences.</p>
+                    <p>My approach combines user research, usability testing, and interface design to understand user behavior and turn insights into clear product solutions.</p>
+                    <p>I have experience creating wireframes and prototypes in Figma, as well as conducting user interviews and usability tests.</p>
+                    <p>My background in recruitment also helped me develop strong communication skills and empathy when understanding both users and candidates.</p>
+                    <p>Currently, I'm studying Web Development to strengthen my understanding of how digital products are built.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -633,29 +694,25 @@
                     <h3 style="margin-bottom: 2rem; color: #2c3e50;">Work Experience</h3>
                     
                     <div class="experience-item">
-                        <h3>UX UI Designer</h3>
+                        <h3>UX/UI Designer</h3>
+                        <div class="company">Freelance &amp; Case Study Projects</div>
+                        <div class="timeline">Dec 2024 - Present</div>
+                        <div class="job-type">Remote • Freelance</div>
+                        <p>Designed web and mobile interfaces using user-centered design principles.</p>
+                        <p>Created wireframes and interactive prototypes in Figma.</p>
+                        <p>Conducted remote usability tests and user interviews.</p>
+                        <p>Analyzed qualitative feedback to improve user flows and usability.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>UX/UI Support &amp; Junior Recruiter</h3>
                         <div class="company">Beyond the Infinite</div>
-                        <div class="timeline">Jul 2023 - Present</div>
-                        <div class="job-type">Remote • Full-time</div>
-                        <p>Designed intuitive web and mobile interfaces through research and iterative prototyping.<br>
-                           Partnered with developers to streamline feature implementation and ensure design consistency.<br>
-                           Conducted remote usability tests to identify friction points and optimize user flows.</p>
-                    </div>
-
-                    <div class="experience-item">
-                        <h3>Administrative Assistant</h3>
-                        <div class="company">Naldo and Musimundo</div>
-                        <div class="timeline">March 2021 - Jul 2023</div>
-                        <div class="job-type">On-site • Full-time</div>
-                        <p>Oversaw daily retail operations, data management, and customer support to streamline store efficiency.</p>
-                    </div>
-
-                    <div class="experience-item">
-                        <h3>Business Manager</h3>
-                        <div class="company">DOSSE SA</div>
-                        <div class="timeline">Jan 2013 - Nov 2020</div>
-                        <div class="job-type">On-site • Full-time</div>
-                        <p>Managed staff, accounting, legal tasks, purchasing, logistics, and supplier negotiations.</p>
+                        <div class="timeline">Jul 2023 - Dec 2024</div>
+                        <div class="job-type">Remote • Contract</div>
+                        <p>Supported UX/UI tasks including wireframes and interface improvements.</p>
+                        <p>Assisted in analyzing user and candidate profiles for digital platforms.</p>
+                        <p>Conducted remote interviews and usability sessions.</p>
+                        <p>Collaborated with distributed teams in a remote environment.</p>
                     </div>
                 </div>
 
@@ -669,9 +726,15 @@
                     </div>
 
                     <div class="education-item">
-                        <h3>Web Design and & Programming</h3>
+                        <h3>Web Design and &amp; Programming</h3>
                         <div class="company">DaVinci School</div>
-                        <div class="timeline">2024-2026</div>
+                        <div class="timeline">Incomplete</div>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>Web Development and Digital Applications</h3>
+                        <div class="company">Instituto Superior Santa Rosa de Calamuchita</div>
+                        <div class="timeline">2026 – Present</div>
                     </div>
 
                     <h3 style="margin: 2rem 0; color: #2c3e50;">Languages</h3>
@@ -684,6 +747,41 @@
                     <ul class="certifications-list">
                         <li><span class="icon">🎓</span> Graphic Design Foundations Course (2024) – Coderhouse</li>
                     </ul>
+                </div>
+            </div>
+
+            <div class="skills-section">
+                <div class="skills-cards-grid">
+                    <div class="skill-card">
+                        <h3>Skills</h3>
+                        <div class="skills-pills">
+                            <span class="skill-pill">UX Research</span>
+                            <span class="skill-pill">User Interviews</span>
+                            <span class="skill-pill">Usability Testing</span>
+                            <span class="skill-pill">Wireframing</span>
+                            <span class="skill-pill">Prototyping</span>
+                            <span class="skill-pill">UX Writing</span>
+                            <span class="skill-pill">Interaction Design</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Tools</h3>
+                        <div class="skills-pills">
+                            <span class="skill-pill">Figma</span>
+                            <span class="skill-pill">Miro</span>
+                            <span class="skill-pill">Notion</span>
+                            <span class="skill-pill">Trello</span>
+                            <span class="skill-pill">Slack</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Basic Technical Skills</h3>
+                        <div class="skills-pills">
+                            <span class="skill-pill">HTML</span>
+                            <span class="skill-pill">CSS</span>
+                            <span class="skill-pill">JavaScript (basic)</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -789,7 +887,7 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <h3>Email</h3>
-                    <a href="mailto:yessirodriguez2470@gmail.com">yessirodriguez2470@gmail.com</a>
+                    <a href="mailto:yessicobos2470@gmail.com">yessicobos2470@gmail.com</a>
                 </div>
                 <div class="contact-item">
                     <h3>LinkedIn</h3>
