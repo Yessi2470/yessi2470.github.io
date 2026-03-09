@@ -252,6 +252,30 @@
             margin-top: 0.5rem;
             font-weight: 400;
         }
+
+        .project-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1.5rem 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+        .project-summary-item {
+            color: #666;
+            font-size: 1rem;
+        }
+        .project-summary-item strong {
+            color: #2c3e50;
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+        }
     </style>
 </head>
 <body>
@@ -271,6 +295,12 @@
                 <span class="project-tag" style="background: #f0f0f0; color: #2c3e50;">Client Project</span>
                 <span class="project-tag" style="background: #f0f0f0; color: #2c3e50;">Landing Page</span>
             </div>
+            <div class="project-summary">
+                <div class="project-summary-item"><strong>Role</strong>UX/UI Designer</div>
+                <div class="project-summary-item"><strong>Duration</strong>3 weeks</div>
+                <div class="project-summary-item"><strong>Tools</strong>Figma, FigJam</div>
+                <div class="project-summary-item"><strong>Project Type</strong>Landing Page (B2B)</div>
+            </div>
             <div style="margin-top: 2rem;">
                 <img src="imagen/Beyond.png" alt="Beyond the Infinite" style="width: 90%; max-width: 800px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
             </div>
@@ -281,38 +311,48 @@
         <div class="container">
             <div class="section">
                 <h2>Project Overview</h2>
-                <p>Beyond the Infinite is a U.S.-based company that connects Latin American professionals with businesses in the U.S. The goal was to design a landing page that clearly communicated the company's purpose and built trust with both potential clients and candidates.</p>
+                <p>Beyond the Infinite is a U.S.-based company that connects Latin American professionals with businesses in the United States.</p>
+                <p>The goal of this project was to design a landing page that clearly communicates the company's value proposition and builds trust with two key audiences: companies looking for talent and professionals seeking job opportunities.</p>
             </div>
 
             <div class="section">
                 <h2>My Role</h2>
-                <p>As the UX/UI Designer, I was responsible for the research, structure, and design of the website. My focus was on creating a clear, professional interface that supported the needs of two main user groups.</p>
+                <div class="highlights">
+                    <ul>
+                        <li>UX Research</li>
+                        <li>Information Architecture</li>
+                        <li>Wireframing</li>
+                        <li>UI Design</li>
+                        <li>Prototyping in Figma</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="section">
                 <h2>Design Challenge</h2>
-                <p>The landing page needed to speak to two audiences at once:</p>
+                <p>The landing page needed to communicate effectively with two different audiences:</p>
                 <ul style="color: #666; list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 0.5em;"><span style="color: #2c3e50; font-weight: bold; margin-right: 0.5em;">✓</span>U.S. companies searching for talent</li>
-                    <li style="margin-bottom: 0.5em;"><span style="color: #2c3e50; font-weight: bold; margin-right: 0.5em;">✓</span>Latin American professionals looking for job opportunities</li>
+                    <li style="margin-bottom: 0.5em;"><span style="color: #2c3e50; font-weight: bold; margin-right: 0.5em;">•</span>U.S. companies looking to hire qualified professionals</li>
+                    <li style="margin-bottom: 0.5em;"><span style="color: #2c3e50; font-weight: bold; margin-right: 0.5em;">•</span>Latin American professionals searching for remote opportunities</li>
                 </ul>
-                <p>The challenge was to make the message clear and relevant for both, while keeping the design clean and easy to navigate.</p>
+                <p>The challenge was to create a clear message and structure that addressed both audiences without making the page confusing or overwhelming.</p>
             </div>
 
             <div class="highlights">
                 <h3>Key Design Decisions</h3>
                 <ul>
-                    <li>Clean, trustworthy layout to support business credibility</li>
-                    <li>Clear value proposition and dual messaging</li>
+                    <li>Clean and professional layout to build credibility</li>
+                    <li>Clear value proposition for both audiences</li>
+                    <li>Strategic CTAs guiding users to the correct action</li>
                     <li>Responsive design for mobile and desktop</li>
-                    <li>Strategic CTAs guiding both types of users</li>
-                    <li>Visual hierarchy and testimonials to support the message</li>
+                    <li>Strong visual hierarchy to highlight important information</li>
                 </ul>
             </div>
 
             <div class="section">
                 <h2>Design Process</h2>
-                <p>I started by identifying the goals of the business and understanding both user profiles. I created wireframes and prototypes in Figma, iterated with feedback, and refined the layout to improve flow and clarity.</p>
+                <p>I began by identifying the business goals and understanding the needs of both user groups.</p>
+                <p>Based on these insights, I created wireframes to structure the content and user flow. After validating the layout, I developed prototypes in Figma and refined the design through iterations to improve clarity and usability.</p>
             </div>
 
             <div class="project-image" style="background: white; padding: 2rem; display: flex; flex-direction: row; gap: 2rem; justify-content: center; align-items: center;">
@@ -320,7 +360,11 @@
                 <img src="imagen/Beyontabout.png" alt="Beyond the Infinite About" style="width: 50%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
             </div>
 
-        
+            <div class="section">
+                <h2>Learnings</h2>
+                <p>This project helped me understand how important it is to design for multiple audiences while maintaining clarity and simplicity. It also reinforced the value of visual hierarchy and clear messaging in landing page design.</p>
+            </div>
+        </div>
     </section>
     <div class="project-nav">
         <a href="good-girl-perfume.html" class="project-nav-btn previous">
